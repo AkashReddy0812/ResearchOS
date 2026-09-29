@@ -56,12 +56,32 @@ class JWTSettings(BaseModel):
 # Main Settings
 # ==========================
 
+class RedisSettings(BaseModel):
+    url: str = "redis://localhost:6379/0"
+    embedding_cache_ttl: int = 2592000  # 30 days
+    enrichment_cache_ttl: int = 2592000 # 30 days
+    rate_limit_prefix: str = "rate_limit:"
+
+class Neo4jSettings(BaseModel):
+    uri: str = "bolt://localhost:7687"
+    username: str = "neo4j"
+    password: str = "password"
+
+class LLMRouteSettings(BaseModel):
+    planner: str = "local"
+    sufficiency_evaluator: str = "local"
+    metadata_enrichment: str = "local"
+    answer_generation: str = "hosted"
+
 class Settings(BaseSettings):
     app: AppSettings = AppSettings()
     api: ApiSettings = ApiSettings()
     logging: LoggingSettings = LoggingSettings()
     database: DatabaseSettings = DatabaseSettings()
     jwt: JWTSettings = JWTSettings()
+    redis: RedisSettings = RedisSettings()
+    neo4j: Neo4jSettings = Neo4jSettings()
+    llm_route: LLMRouteSettings = LLMRouteSettings()
 
     model_config = SettingsConfigDict(
     env_file=".env",

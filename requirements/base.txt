@@ -1,0 +1,75 @@
+# ==========================
+# FastAPI
+# ==========================
+fastapi
+uvicorn[standard]
+python-multipart
+
+# ==========================
+# Configuration
+# ==========================
+pydantic
+pydantic-settings
+python-dotenv
+
+# ==========================
+# Database
+# ==========================
+sqlalchemy
+aiosqlite
+
+# ==========================
+# Authentication
+# ==========================
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt
+
+# ==========================
+# HTTP Clients
+# ==========================
+httpx
+arxiv
+
+# ==========================
+# AI / RAG
+# ==========================
+langgraph
+langchain-core
+
+sentence-transformers
+transformers
+torch
+
+chromadb
+rank-bm25
+
+# ==========================
+# PDF Processing
+# ==========================
+PyMuPDF
+
+# ==========================
+# Background Jobs
+# ==========================
+celery
+redis
+
+# ==========================
+# Knowledge Graph
+# ==========================
+neo4j
+
+# ==========================
+# Observability
+# ==========================
+opentelemetry-api
+opentelemetry-sdk
+
+# ==========================
+# Utilities
+# ==========================
+typing-extensions
+PyYAML
+Jinja2
+rich

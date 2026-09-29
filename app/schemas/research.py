@@ -16,3 +16,21 @@ class ResearchResponse(BaseModel):
     papers: list[dict]
     report: str
     errors: list[str]
+
+
+class JobCreateResponse(BaseModel):
+    job_id: str
+    status: str
+
+
+from datetime import datetime
+from typing import Any
+
+class JobStatusResponse(BaseModel):
+    job_id: str
+    status: str
+    current_node: str | None
+    iteration_count: int
+    sufficiency_score: float
+    coverage_metrics: dict[str, Any] | None
+    updated_at: datetime
